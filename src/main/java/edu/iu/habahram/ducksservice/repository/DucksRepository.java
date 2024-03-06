@@ -13,6 +13,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Component
@@ -97,6 +99,8 @@ public class DucksRepository {
                 result.add(d);
             }
         }
+        //sorts elements of list according to specified comparator (type)
+        result.sort(Comparator.comparing(DuckData::type));
         return result;
     }
 
